@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     
     public NavMeshAgent agent;
     
-    Vector3 terrianSize;
+    
     public GameObject Enmey;
 
     [Header("Enemy Spawn Config")]
@@ -23,8 +23,8 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        terrianSize = terrian.terrainData.size;
-        SpawnEnmey();
+        Vector3 terrianSize = terrian.terrainData.size;
+        SpawnEnmey(terrianSize);
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class EnemySpawn : MonoBehaviour
         
     }
 
-    void SpawnEnmey()
+    void SpawnEnmey(terrianSize)
     {
           //spawn enemy in random area
         int randEnemy = Random.Range(minEnemy, maxEnemy);
